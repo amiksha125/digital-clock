@@ -30,5 +30,35 @@
     display: flex;
     align-items: center;
     justify-content: center; 
+    backdrop-filter: blur(40px);
+    /* used to apply visual effects (like blurring or color shifting) to the background area behind an element.
+    applies a 40-pixel blur to everything behind the element — not the element itself. */
+
+
+}
+/* add pseudo elements of container  */
+.container::before{
+ content: '';
+ width: 180px;
+ height: 180px;
+ background: #f41b75;
+ border-radius: 5px;
+ position: absolute;
+ left: -50px;
+ top: -50px;
+ z-index: -1; 
+ /*container will be hidden  */
 }
 
+.container::after{
+ content: '';
+ width: 180px;
+ height: 180px;
+ background: #419aff;
+ border-radius: 50%;
+ position: absolute;
+ right: -30px;
+ bottom: -50px;
+ z-index: -1; 
+ /*container will be hidden  */
+}
