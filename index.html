@@ -25,17 +25,18 @@
         let min = document.getElementById("min");
         let sec = document.getElementById("sec");
 
-        let currentTime = new Date();
+        setInterval(() => {
+            let currentTime = new Date();
 
-        console.log(currentTime.getHours()); 
-        // you will see loocal time and date
+            console.log(currentTime.getHours()); 
+        // you will see local time and date
 
-        hrs.innerHTML = currentTime.getHours();
-        min.innerHTML = currentTime.getMinutes();
-        sec.inert = currentTime.getSeconds();
-        
-        
-
+            hrs.innerHTML = (currentTime.getHours()<10?"0":"")  + currentTime.getHours();
+            min.innerHTML = (currentTime.getMinutes()<10?"0":"")  + currentTime.getMinutes();
+            sec.innerHTML = (currentTime.getSeconds()<10 ? "0" : "") + currentTime.getSeconds();
+        }, 1000);
+ 
+        //1000 mili sec is 1 sec , means setInterval will execute the above code after every one sec
     </script>
 </body>
 </html>
